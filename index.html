@@ -43,9 +43,15 @@
     .controls {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: 25px;
       margin-top: 25px;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .controls button {
@@ -67,6 +73,14 @@
     .play-btn img {
       width: 120px; /* Bigger main button */
       height: 120px;
+    }
+
+    .label {
+      font-size: 8px;
+      margin-top: 10px;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+      letter-spacing: 1px;
     }
 
     /* Metal-style upload button */
@@ -103,15 +117,26 @@
     <audio id="audio"></audio>
 
     <div class="controls">
-      <button class="back-btn" onclick="backTrack()">
-        <img src="back.png" alt="Back">
-      </button>
-      <button class="play-btn" onclick="togglePlay()">
-        <img src="play.png" alt="Play">
-      </button>
-      <button class="forward-btn" onclick="nextTrack()">
-        <img src="forward.png" alt="Forward">
-      </button>
+      <div class="control-group">
+        <button class="back-btn" onclick="backTrack()">
+          <img src="back.png" alt="Back">
+        </button>
+        <div class="label">BACK</div>
+      </div>
+
+      <div class="control-group">
+        <button class="play-btn" onclick="togglePlay()">
+          <img src="play.png" alt="Play">
+        </button>
+        <div class="label">PLAY</div>
+      </div>
+
+      <div class="control-group">
+        <button class="forward-btn" onclick="nextTrack()">
+          <img src="forward.png" alt="Forward">
+        </button>
+        <div class="label">FORWARD</div>
+      </div>
     </div>
 
     <label for="file-upload" class="upload-label">Choose File</label>
