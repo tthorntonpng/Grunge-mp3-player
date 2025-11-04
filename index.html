@@ -25,7 +25,7 @@
       height: 500px;
       border-radius: 40px;
       background: linear-gradient(145deg, #4b4b4b, #1e1e1e);
-      box-shadow: inset 0 0 15px #000; /* inner shading only */
+      box-shadow: inset 0 0 15px #000; /* inner glow only */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -65,16 +65,32 @@
 
     .controls {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-start;
-      width: 70%; /* buttons perfectly even */
+      width: 85%;
       margin-top: 40px;
+      position: relative;
     }
 
     .control-group {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .back-btn {
+      position: absolute;
+      left: 25px; /* moved slightly inward */
+    }
+
+    .play-btn {
+      position: relative;
+      z-index: 2;
+    }
+
+    .forward-btn {
+      position: absolute;
+      right: 25px; /* moved slightly inward to match back button */
     }
 
     .controls button {
@@ -142,22 +158,22 @@
     <audio id="audio"></audio>
 
     <div class="controls">
-      <div class="control-group">
-        <button class="back-btn" onclick="backTrack()">
+      <div class="control-group back-btn">
+        <button onclick="backTrack()">
           <img src="back.png" alt="Back">
         </button>
         <div class="label">BACK</div>
       </div>
 
-      <div class="control-group">
-        <button class="play-btn" onclick="togglePlay()">
+      <div class="control-group play-btn">
+        <button onclick="togglePlay()">
           <img src="play.png" alt="Play">
         </button>
         <div class="label">PLAY</div>
       </div>
 
-      <div class="control-group">
-        <button class="forward-btn" onclick="nextTrack()">
+      <div class="control-group forward-btn">
+        <button onclick="nextTrack()">
           <img src="forward.png" alt="Forward">
         </button>
         <div class="label">FORWARD</div>
