@@ -67,7 +67,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      width: 75%; /* buttons slightly inward */
+      width: 70%; /* buttons perfectly even */
       margin-top: 40px;
     }
 
@@ -187,7 +187,6 @@
         audio.src = currentFile;
         audio.play();
 
-        // Try reading metadata (title, artist)
         jsmediatags.read(file, {
           onSuccess: function(tag) {
             const title = tag.tags.title || file.name.replace(/\.[^/.]+$/, "");
