@@ -25,7 +25,7 @@
       height: 500px;
       border-radius: 40px;
       background: linear-gradient(145deg, #4b4b4b, #1e1e1e);
-      box-shadow: inset 0 0 15px #000; /* inner glow only */
+      box-shadow: inset 0 0 15px #000; /* inner shading only */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -78,9 +78,10 @@
       align-items: center;
     }
 
+    /* Slightly pushed back out */
     .back-btn {
       position: absolute;
-      left: 25px; /* moved slightly inward */
+      left: 18px;
     }
 
     .play-btn {
@@ -90,7 +91,7 @@
 
     .forward-btn {
       position: absolute;
-      right: 25px; /* moved slightly inward to match back button */
+      right: 18px;
     }
 
     .controls button {
